@@ -4,31 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Churn Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .customer-img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+            max-width: 400px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-    <h2>Enter Customer Details</h2>
-    <form action="/predict" method="post">
-        <label>Tenure:</label> <input type="number" name="tenure" required><br>
-        <label>Contract:</label> <input type="number" name="Contract" required><br>
-        <label>Tech Support:</label> <input type="number" name="TechSupport" required><br>
-        <label>Total Charges:</label> <input type="number" name="TotalCharges" required><br>
-        <label>Internet Service:</label> <input type="number" name="InternetService" required><br>
-        <label>Multiple Lines:</label> <input type="number" name="MultipleLines" required><br>
-        <label>Streaming TV:</label> <input type="number" name="StreamingTV" required><br>
-        <label>Monthly Charges:</label> <input type="number" name="MonthlyCharges" required><br>
-        <label>Phone Service:</label> <input type="number" name="PhoneService" required><br>
-        <label>Paperless Billing:</label> <input type="number" name="PaperlessBilling" required><br>
-        <label>Payment Method:</label> <input type="number" name="PaymentMethod" required><br>
-        <label>Senior Citizen:</label> <input type="number" name="SeniorCitizen" required><br>
-        <label>Dependents:</label> <input type="number" name="Dependents" required><br>
-        <label>Partner:</label> <input type="number" name="Partner" required><br>
-        <label>Online Security:</label> <input type="number" name="OnlineSecurity" required><br>
-        <label>Online Backup:</label> <input type="number" name="OnlineBackup" required><br>
-        <label>Device Protection:</label> <input type="number" name="DeviceProtection" required><br>
-        <label>Streaming Movies:</label> <input type="number" name="StreamingMovies" required><br>
-        <label>Unlimited Data:</label> <input type="number" name="UnlimitedData" required><br>
-       
-        <button type="submit">Predict</button>
-    </form>
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/1047/1047711.png" class="customer-img" alt="Customer Icon">
+        <h2>Enter Customer Details</h2>
+        <form action="/predict" method="post">
+            <label>Tenure:</label> <input type="number" name="tenure" required><br>
+            <label>Contract:</label> <input type="number" name="Contract" required><br>
+            <label>Tech Support:</label> <input type="number" name="TechSupport" required><br>
+            <label>Total Charges:</label> <input type="number" name="TotalCharges" required><br>
+            <label>Internet Service:</label> <input type="number" name="InternetService" required><br>
+            <label>Multiple Lines:</label> <input type="number" name="MultipleLines" required><br>
+            <label>Streaming TV:</label> <input type="number" name="StreamingTV" required><br>
+            <label>Monthly Charges:</label> <input type="number" name="MonthlyCharges" required><br>
+            <label>Phone Service:</label> <input type="number" name="PhoneService" required><br>
+            <label>Paperless Billing:</label> <input type="number" name="PaperlessBilling" required><br>
+            <label>Payment Method:</label> <input type="number" name="PaymentMethod" required><br>
+            <label>Senior Citizen:</label> <input type="number" name="SeniorCitizen" required><br>
+            <label>Dependents:</label> <input type="number" name="Dependents" required><br>
+            <label>Partner:</label> <input type="number" name="Partner" required><br>
+            <label>Online Security:</label> <input type="number" name="OnlineSecurity" required><br>
+            <label>Online Backup:</label> <input type="number" name="OnlineBackup" required><br>
+            <label>Device Protection:</label> <input type="number" name="DeviceProtection" required><br>
+            <label>Streaming Movies:</label> <input type="number" name="StreamingMovies" required><br>
+            <label>Unlimited Data:</label> <input type="number" name="UnlimitedData" required><br>
+        
+            <button type="submit">Predict</button>
+        </form>
+    </div>
 </body>
 </html>

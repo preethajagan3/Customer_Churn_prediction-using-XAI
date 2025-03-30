@@ -4,23 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .result-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+            max-width: 400px;
+        }
+        .prediction {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .churn {
+            color: red;
+            background-color: #ffe5e5;
+        }
+        .not-churn {
+            color: green;
+            background-color: #e5ffe5;
+        }
+        .explanation-list {
+            text-align: left;
+        }
+        .try-again {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .try-again:hover {
+            background-color: #0056b3;
+        }
+        .churn-image {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <h2>Prediction Result</h2>
-    <p><strong>Prediction:</strong> {{ prediction }}</p>
-    <p><strong>Churn Probability:</strong> {{ probability }}</p>
+    <div class="result-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/1902/1902261.png" class="churn-image" alt="Prediction Icon">
+        <p class="prediction {% if prediction == 'Yes (Churn)' %}churn{% else %}not-churn{% endif %}">
+            <strong>Prediction:</strong> {{ prediction }}
+        </p>
+        <p><strong>Churn Probability:</strong> {{ probability }}%</p>
 
+        <h3>Top Factors Influencing the Prediction:</h3>
+        <ul class="explanation-list">
+            {% for item in explanation %}
+                <li><strong>{{ item.feature }}</strong>: Impact = {{ item.impact }}</li>
+            {% endfor %}
+        </ul>
 
-    <h3>Top Factors Influencing the Prediction:</h3>
-    <ul>
-        {% for item in explanation %}
-            <li><strong>{{ item.feature }}</strong>: Impact = {{ item.impact }}</li>
-        {% endfor %}
-    </ul>
-
-
-    <a href="/">Try Again</a>
+        <a href="/" class="try-again">Try Again</a>
+    </div>
 </body>
 </html>
-
-
