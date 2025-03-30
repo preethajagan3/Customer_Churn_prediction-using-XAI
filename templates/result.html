@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h2>Prediction Result</h2>
+    <p><strong>Prediction:</strong> {{ prediction }}</p>
+    <p><strong>Churn Probability:</strong> {{ probability }}</p>
+
+
+    <h3>Top Factors Influencing the Prediction:</h3>
+    <ul>
+        {% for item in explanation %}
+            <li><strong>{{ item.feature }}</strong>: Impact = {{ item.impact }}</li>
+        {% endfor %}
+    </ul>
+
+
+    <a href="/">Try Again</a>
+</body>
+</html>
+
+

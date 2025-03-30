@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+</head>
+<body>
+    <h2>Enter Customer Details</h2>
+    <form action="/predict" method="post">
+        <label>Tenure:</label> <input type="number" name="tenure" required><br>
+        <label>Contract:</label> <input type="number" name="Contract" required><br>
+        <label>Tech Support:</label> <input type="number" name="TechSupport" required><br>
+        <label>Total Charges:</label> <input type="number" name="TotalCharges" required><br>
+        <label>Internet Service:</label> <input type="number" name="InternetService" required><br>
+        <label>Multiple Lines:</label> <input type="number" name="MultipleLines" required><br>
+        <label>Streaming TV:</label> <input type="number" name="StreamingTV" required><br>
+        <label>Monthly Charges:</label> <input type="number" name="MonthlyCharges" required><br>
+        <label>Phone Service:</label> <input type="number" name="PhoneService" required><br>
+        <label>Paperless Billing:</label> <input type="number" name="PaperlessBilling" required><br>
+        <label>Payment Method:</label> <input type="number" name="PaymentMethod" required><br>
+        <label>Senior Citizen:</label> <input type="number" name="SeniorCitizen" required><br>
+        <label>Dependents:</label> <input type="number" name="Dependents" required><br>
+        <label>Partner:</label> <input type="number" name="Partner" required><br>
+        <label>Online Security:</label> <input type="number" name="OnlineSecurity" required><br>
+        <label>Online Backup:</label> <input type="number" name="OnlineBackup" required><br>
+        <label>Device Protection:</label> <input type="number" name="DeviceProtection" required><br>
+        <label>Streaming Movies:</label> <input type="number" name="StreamingMovies" required><br>
+        <label>Unlimited Data:</label> <input type="number" name="UnlimitedData" required><br>
+       
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
